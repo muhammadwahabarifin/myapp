@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navigation/navbar";
 import Head from "next/head";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/context/theme-provider";
+import { Navbar } from "@/components/navigation/navbar";
+import { Footer } from "@/components/section/Footer/footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
         <ThemeProvider attribute='class'>
           <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
